@@ -4,7 +4,7 @@ pipeline{
     stage('Maven install') {
       steps {
         withMaven(maven: 'LocalMaven') {
-          sh 'mvn test'
+          sh 'mvn clean install'
 }
     }
   }
