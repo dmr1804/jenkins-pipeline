@@ -1,8 +1,5 @@
 pipeline{
   agent any
-     tools{
-        maven 'LocalMaven'
-    }
   stages {
     stage("SCM Checkout"){
             steps{
@@ -12,7 +9,7 @@ pipeline{
     stage('Maven install') {
       steps {
         withMaven(maven: 'LocalMaven') {
-          bat 'mvn clean package'
+          sh 'mvn clean install'
 }
     }
   }
