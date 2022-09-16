@@ -13,7 +13,7 @@ pipeline{
     
         stage("Clean repo"){
           steps{
-            bat 'mvn clean
+            bat 'mvn clean'
             }
        }
         
