@@ -4,7 +4,7 @@ pipeline{
     stage('Maven install') {
       steps {
         withMaven(maven: 'LocalMaven') {
-          sh 'mvn clean install'
+          sh 'mvn install -Dmaven.javadoc.skip=true -Dgpg.skip'
 }
     }
   }
