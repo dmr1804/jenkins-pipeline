@@ -13,13 +13,17 @@ pipeline{
     
         stage("Clean repo"){
           steps{
+            withMaven(maven: 'LocalMaven') {
             bat 'mvn clean'
+            }
             }
        }
         
     stage("Clean test"){
           steps{
+            withMaven(maven: 'LocalMaven') {
             bat 'mvn test'
+            }
             }
        }
     
