@@ -11,26 +11,26 @@ pipeline{
             }
         }
     
-        stage("Clean repo"){
-          steps{
-            withMaven(maven: 'LocalMaven') {
-            bat 'mvn clean'
-            }
-            }
-       }
+        //stage("Clean repo"){
+       //   steps{
+       //     withMaven(maven: 'LocalMaven') {
+         //   bat 'mvn clean'
+           // }
+           // }
+      // }
         
-    stage("Clean test"){
-          steps{
-            withMaven(maven: 'LocalMaven') {
-            bat 'mvn test'
-            }
-            }
-       }
+    //stage("Clean test"){
+      //    steps{
+      //      withMaven(maven: 'LocalMaven') {
+        //    bat 'mvn test'
+          //  }
+          //  }
+      // }
     
     stage('Maven install') {
       steps {
          withMaven(maven: 'LocalMaven') {
-          bat 'mvn install'
+          bat "mvn -Dmaven.test.failure.ignore=true clean package"
 }
     }
   }
