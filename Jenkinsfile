@@ -30,7 +30,7 @@ pipeline{
     stage('Maven install') {
       steps {
          withMaven(maven: 'LocalMaven') {
-          bat lable: '', scripts: 'mvn clean test'
+          bat label: '', script: 'mvn clean test'
 }
     }
   }
