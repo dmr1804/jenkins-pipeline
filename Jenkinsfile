@@ -30,7 +30,7 @@ pipeline{
     stage('Maven install') {
       steps {
          withMaven(maven: 'LocalMaven') {
-          bat "mvn -Dmaven.test.failure.ignore=true clean package"
+          bat lable: '', scripts: 'mvn clean test'
 }
     }
   }
